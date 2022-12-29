@@ -1,0 +1,311 @@
+﻿<Application x:Class="MVVM_Window_App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MVVM_Window_App"
+             StartupUri="MainWindow.xaml">
+    
+    <Application.Resources>
+
+        <ImageBrush x:Key="def"
+                    ImageSource="Images/closed.png"
+                    Stretch="Uniform" />
+
+        <ImageBrush x:Key="mo"
+                    ImageSource="Images/open.png"
+                    Stretch="Uniform" />
+
+        <Style x:Key="BtnStyle1"
+               TargetType="{x:Type Button}">
+
+            <Setter Property="Height"
+                    Value="180" />
+            <Setter Property="Width"
+                    Value="160" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="Margin"
+                    Value="0,0,0,25" />
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="border"
+                                BorderThickness="0"
+                                Background="{StaticResource def}" />
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource mo}" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed"
+                                     Value="True">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource mo}" />
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+        <Style x:Key="BtnStyle2"
+               TargetType="{x:Type Button}">
+
+            <Setter Property="Height"
+                    Value="180" />
+            <Setter Property="Width"
+                    Value="160" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="Margin"
+                    Value="0,0,0,25" />
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="border"
+                                BorderThickness="0"
+                                Background="{StaticResource mo}" />
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource def}" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed"
+                                     Value="True">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource def}" />
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+        <Style x:Key="HeaderText1"
+               TargetType="TextBlock">
+
+            <Setter Property="Text"
+                    Value="M V V M" />
+            <Setter Property="Foreground"
+                    Value="#2d2d2d" />
+            <Setter Property="FontFamily"
+                    Value="Fonts/#Roboto" />
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Top" />
+            <Setter Property="Margin"
+                    Value="0,110,0,0" />
+
+        </Style>
+
+        <Style x:Key="HeaderText2"
+               TargetType="TextBlock">
+
+            <Setter Property="Text"
+                    Value="Window" />
+            <Setter Property="Foreground"
+                    Value="#2d2d2d" />
+            <Setter Property="FontFamily"
+                    Value="Fonts/#Roboto" />
+            <Setter Property="FontSize"
+                    Value="34" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Top" />
+            <Setter Property="Margin"
+                    Value="0,130,0,0" />
+
+        </Style>
+
+        <Style x:Key="BackgroundStyle"
+               TargetType="Border">
+            <Setter Property="Background"
+                    Value="#C9CB2C" />
+            <Setter Property="Height"
+                    Value="500" />
+            <Setter Property="Width"
+                    Value="300" />
+            <Setter Property="CornerRadius"
+                    Value="20" />
+            <Setter Property="Border.Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="20"
+                                      ShadowDepth="2"
+                                      Direction="-90"
+                                      Color="Black"
+                                      Opacity="0.3" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Footer"
+               TargetType="Border">
+            <Setter Property="Background"
+                    Value="#F8F8F8" />
+            <Setter Property="Height"
+                    Value="100" />
+            <Setter Property="Width"
+                    Value="300" />
+            <Setter Property="CornerRadius"
+                    Value="0,0,20,20" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Bottom" />
+            <Setter Property="Margin"
+                    Value="0,0,0,50" />
+
+        </Style>
+
+        <Style x:Key="FooterText1"
+               TargetType="TextBlock">
+
+            <Setter Property="Text"
+                    Value="C #   D E S I G N   P R O" />
+            <Setter Property="FontSize"
+                    Value="28" />
+            <Setter Property="FontFamily"
+                    Value="Fonts/#Barlow Condensed" />
+            <Setter Property="Foreground"
+                    Value="#383844" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Bottom" />
+            <Setter Property="Margin"
+                    Value="0,0,0,98" />
+
+        </Style>
+
+        <Style x:Key="FooterText2"
+               TargetType="TextBlock">
+
+            <Setter Property="Text"
+                    Value="D E S I G N   T H E   I N T E R F A C E" />
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="FontFamily"
+                    Value="Fonts/#Barlow Condensed" />
+            <Setter Property="Foreground"
+                    Value="#5B5B6F" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Bottom" />
+            <Setter Property="Margin"
+                    Value="0,0,0,78" />
+
+        </Style>
+
+        <!--// Exit Button Style //-->
+
+        <ImageBrush x:Key="close_def"
+                    ImageSource="Images/shutdown_def.png"
+                    Stretch="Uniform" />
+
+        <ImageBrush x:Key="close_mo"
+                    ImageSource="Images/shutdown_mo.png"
+                    Stretch="Uniform" />
+
+        <Style x:Key="ExitBtnStyle"
+               TargetType="{x:Type Button}">
+
+            <Setter Property="Height"
+                    Value="30" />
+            <Setter Property="Width"
+                    Value="30" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Right" />
+            <Setter Property="VerticalAlignment"
+                    Value="Top" />
+            <Setter Property="Margin"
+                    Value="0,59,34,0" />
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="border"
+                                BorderThickness="0"
+                                Background="{StaticResource close_def}" />
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource close_mo}" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed"
+                                     Value="True">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource close_mo}" />
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+    </Application.Resources>
+    
+</Application>
